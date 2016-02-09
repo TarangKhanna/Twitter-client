@@ -10,8 +10,8 @@ import UIKit
 import BDBOAuth1Manager
 
 let twitterBaseUrl = NSURL(string: "https://api.twitter.com")
-let twitterConsumerKey = "" // add own keys
-let twitterConsumerSecret = ""
+let twitterConsumerKey = "3chEzIG0t1ocIXOwsMIiWsmYv" // add own keys
+let twitterConsumerSecret = "C9nfYX6t63gBtzX3vRJwHe4EbAve8XneQ6dWXEIuBgyATfLzV6"
 
 class TwitterClient: BDBOAuth1SessionManager {
     class var sharedInstance: TwitterClient { // to use as singleton
