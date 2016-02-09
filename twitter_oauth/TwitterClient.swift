@@ -9,18 +9,19 @@
 import UIKit
 import BDBOAuth1Manager
 
-let twitterConsumerKey = ""
-let twitterConsumerSecret = ""
 let twitterBaseUrl = NSURL(string: "https://api.twitter.com")
+let twitterConsumerKey = "" // add own keys
+let twitterConsumerSecret = ""
 
 class TwitterClient: BDBOAuth1SessionManager {
-    class var sharedInstance: TwitterClient {
+    class var sharedInstance: TwitterClient { // to use as singleton
         struct Static {
             static let instance = TwitterClient(
                 baseURL: twitterBaseUrl,
                 consumerKey: twitterConsumerKey,
                 consumerSecret: twitterConsumerSecret)
         }
+        
         return Static.instance
     }
 }
