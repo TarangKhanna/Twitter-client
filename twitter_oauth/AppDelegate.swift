@@ -44,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
+        
+        
         TwitterClient.sharedInstance.fetchAccessTokenWithPath(
             "oauth/access_token",
             method: "POST",
