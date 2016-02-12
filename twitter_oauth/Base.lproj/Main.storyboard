@@ -35,10 +35,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Tweets View Controller-->
         <scene sceneID="g6a-VZ-6tT">
             <objects>
-                <viewController storyboardIdentifier="TweetsViewController" id="lib-7e-yUf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TweetsViewController" id="lib-7e-yUf" customClass="TweetsViewController" customModule="twitter_oauth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VbD-nA-tN3"/>
                         <viewControllerLayoutGuide type="bottom" id="HNf-ZY-l5A"/>
@@ -50,6 +50,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96H-a3-CBd">
                                 <rect key="frame" x="160" y="319" width="55" height="30"/>
                                 <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="lib-7e-yUf" eventType="touchUpInside" id="oeE-eL-giQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

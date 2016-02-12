@@ -12,6 +12,7 @@ import BDBOAuth1Manager
 class ViewController: UIViewController {
     
     @IBAction func onLogin(sender: AnyObject) { // login button
+        // can put this in User
         TwitterClient.sharedInstance.loginWithCompletion() {
             (user: User?, error: NSError?) in
             if user != nil {
