@@ -6,6 +6,8 @@ use_frameworks!
 target 'twitter_oauth' do
     pod 'AFNetworking'
     pod 'BDBOAuth1Manager'
+    pod 'DGActivityIndicatorView'
+    pod "ElasticTransition"
 end
 
 target 'twitter_oauthTests' do

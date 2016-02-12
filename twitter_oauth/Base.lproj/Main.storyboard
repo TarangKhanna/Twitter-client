@@ -39,7 +39,7 @@
         <!--Home-->
         <scene sceneID="g6a-VZ-6tT">
             <objects>
-                <viewController storyboardIdentifier="TweetsViewController" automaticallyAdjustsScrollViewInsets="NO" id="lib-7e-yUf" customClass="TweetsViewController" customModule="twitter_oauth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="lib-7e-yUf" customClass="TweetsViewController" customModule="twitter_oauth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VbD-nA-tN3"/>
                         <viewControllerLayoutGuide type="bottom" id="HNf-ZY-l5A"/>
@@ -72,31 +72,41 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScreenName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxr-On-qBT">
-                                                    <rect key="frame" x="284" y="11" width="83" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.5425149937" green="0.5425149937" blue="0.5425149937" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2g-EL-7EZ">
-                                                    <rect key="frame" x="81" y="32.5" width="62" height="18"/>
+                                                    <rect key="frame" x="81" y="32" width="62" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELs-NK-nON">
+                                                    <rect key="frame" x="343.5" y="11" width="23.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.5425149937" green="0.5425149937" blue="0.5425149937" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScreenName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxr-On-qBT">
+                                                    <rect key="frame" x="146" y="11" width="83" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.5425149937" green="0.5425149937" blue="0.5425149937" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Cxr-On-qBT" secondAttribute="trailing" constant="8" id="0Yj-Q3-2g2"/>
+                                                <constraint firstAttribute="trailing" secondItem="Cxr-On-qBT" secondAttribute="trailing" constant="146" id="0Yj-Q3-2g2"/>
                                                 <constraint firstItem="tac-Nq-1u9" firstAttribute="leading" secondItem="c3b-p7-Mza" secondAttribute="leading" constant="8" id="191-iw-zhh"/>
                                                 <constraint firstItem="Cxr-On-qBT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V1c-Z6-Blj" secondAttribute="trailing" constant="20" id="4vV-tY-4Lr"/>
+                                                <constraint firstItem="ELs-NK-nON" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cxr-On-qBT" secondAttribute="trailing" constant="12" id="Dx9-tG-DoW"/>
                                                 <constraint firstItem="tac-Nq-1u9" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="9" id="Ev9-IU-EpM"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Cxr-On-qBT" secondAttribute="bottom" constant="20" id="JZU-RY-8aO"/>
                                                 <constraint firstItem="V1c-Z6-Blj" firstAttribute="leading" secondItem="tac-Nq-1u9" secondAttribute="trailing" constant="8" id="PzT-rE-xdK"/>
                                                 <constraint firstItem="Cxr-On-qBT" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="11" id="VG0-cT-wza"/>
                                                 <constraint firstItem="t2g-EL-7EZ" firstAttribute="leading" secondItem="tac-Nq-1u9" secondAttribute="trailing" constant="8" id="WRk-PH-hrG"/>
                                                 <constraint firstItem="t2g-EL-7EZ" firstAttribute="top" secondItem="V1c-Z6-Blj" secondAttribute="bottom" constant="4" id="eo5-9U-II5"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ELs-NK-nON" secondAttribute="bottom" constant="20" id="muO-f5-Jpn"/>
                                                 <constraint firstItem="V1c-Z6-Blj" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="9" id="pAd-GZ-4Ww"/>
+                                                <constraint firstAttribute="trailing" secondItem="ELs-NK-nON" secondAttribute="trailing" constant="8" id="qGb-oV-lzj"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="t2g-EL-7EZ" secondAttribute="bottom" constant="20" id="sad-b5-aSP"/>
+                                                <constraint firstItem="ELs-NK-nON" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="11" id="tg0-E1-F2y"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t2g-EL-7EZ" secondAttribute="trailing" constant="12" id="ybi-tI-CSn"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -104,6 +114,7 @@
                                             <outlet property="messageLabel" destination="t2g-EL-7EZ" id="esS-dJ-BmF"/>
                                             <outlet property="nameLabel" destination="V1c-Z6-Blj" id="QlZ-bc-R2T"/>
                                             <outlet property="screenNameLabel" destination="Cxr-On-qBT" id="K5S-ra-ReX"/>
+                                            <outlet property="timeLabel" destination="ELs-NK-nON" id="EPB-xv-JXj"/>
                                             <outlet property="userImage" destination="tac-Nq-1u9" id="JbW-8s-uMV"/>
                                         </connections>
                                     </tableViewCell>
@@ -143,7 +154,7 @@
         <!--Navigation Controller-->
         <scene sceneID="uOD-98-kKg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fy6-wt-0di" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TweetsViewController" automaticallyAdjustsScrollViewInsets="NO" id="fy6-wt-0di" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z8b-hJ-hZk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

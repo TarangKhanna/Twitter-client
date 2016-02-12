@@ -60,6 +60,7 @@
 		717893401C6A8E660033370D /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		71A718F31C6DB7200051F3D4 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		71A718F51C6DC2E30051F3D4 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		71A718F71C6DCDC00051F3D4 /* twitter_oauth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "twitter_oauth-Bridging-Header.h"; sourceTree = "<group>"; };
 		A632648E52214F41D391D76D /* Pods_twitter_oauth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twitter_oauth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -168,6 +169,7 @@
 			children = (
 				7178933E1C6A8E570033370D /* User.swift */,
 				717893401C6A8E660033370D /* Tweet.swift */,
+				71A718F71C6DCDC00051F3D4 /* twitter_oauth-Bridging-Header.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -514,10 +516,13 @@
 			baseConfigurationReference = 56393B45B31F5A7D9C075951 /* Pods-twitter_oauth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = twitter_oauth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "THacked96.twitter-oauth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "twitter_oauth/twitter_oauth-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -526,10 +531,12 @@
 			baseConfigurationReference = 57D50F1562751ED3B1F18399 /* Pods-twitter_oauth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = twitter_oauth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "THacked96.twitter-oauth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "twitter_oauth/twitter_oauth-Bridging-Header.h";
 			};
 			name = Release;
 		};

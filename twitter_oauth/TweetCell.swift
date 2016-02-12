@@ -18,13 +18,17 @@ class TweetCell: UITableViewCell {
     
     @IBOutlet weak var screenNameLabel: UILabel!
     
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    
     var tweet: Tweet! {
         didSet {
+            
             self.userImage.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!)!)
             self.nameLabel.text = (tweet?.user!.name)!
-            print(tweet?.user!.name)
             self.screenNameLabel.text = "@\(tweet.user!.screenname!)"
             self.messageLabel.text = tweet?.text
+            self.timeLabel.text = "\((tweet?.createdAt?.)!)"
         }
     }
 

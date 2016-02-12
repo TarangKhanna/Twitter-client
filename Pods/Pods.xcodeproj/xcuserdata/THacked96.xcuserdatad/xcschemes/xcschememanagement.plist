@@ -14,6 +14,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DGActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ElasticTransition.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MotionAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-twitter_oauth.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +42,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>35BFA204EBEB7D0669E0BBCFF155B404</key>
+		<key>1C9674A8BF970C51C460F3C31A82CF1B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20EE510C33B653D0D39E8015461CA777</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>291621037D68F7869D267C25CE205F97</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>445B3D47256376A8FB06D383FDBEA0C4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>56A6C91F6AF4BAE9E29528E6E5A5A226</key>
 		<dict>
 			<key>primary</key>
 			<true/>
