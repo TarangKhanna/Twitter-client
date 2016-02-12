@@ -9,9 +9,12 @@
 import UIKit
 import BDBOAuth1Manager
 
+
 let twitterBaseUrl = NSURL(string: "https://api.twitter.com")
-let twitterConsumerKey = "3chEzIG0t1ocIXOwsMIiWsmYv" // add own keys
-let twitterConsumerSecret = "C9nfYX6t63gBtzX3vRJwHe4EbAve8XneQ6dWXEIuBgyATfLzV6"
+let filePath = NSBundle.mainBundle().pathForResource("keys", ofType:"plist")
+let plist = NSDictionary(contentsOfFile:filePath!)
+let twitterConsumerKey = plist?.objectForKey("twitterConsumerKey") as! String
+let twitterConsumerSecret = plist?.objectForKey("twitterConsumerSecret") as! String
 
 class TwitterClient: BDBOAuth1SessionManager {
     
