@@ -20,6 +20,12 @@ class TweetCell: UITableViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var replyButton: UIButton!
+    
+    @IBOutlet weak var retweetButton: UIButton!
+    
+    @IBOutlet weak var likeButton: UIButton!
+    
     
     var tweet: Tweet! {
         didSet {
@@ -29,9 +35,9 @@ class TweetCell: UITableViewCell {
             self.screenNameLabel.text = "@\(tweet.user!.screenname!)"
             self.messageLabel.text = tweet?.text
             self.timeLabel.text = "\(timeAgoSinceDate((tweet?.createdAt)!, numericDates: false))"
-//            nameLabel.preferredMaxLayoutWidth = nameLabel.frame.size.width
         }
     }
+    
     
     func timeAgoSinceDate(date:NSDate, numericDates:Bool) -> String {
         let calendar = NSCalendar.currentCalendar()
@@ -46,7 +52,7 @@ class TweetCell: UITableViewCell {
             if (numericDates){
                 return "1y"
             } else {
-                return "Last year"
+                return "1y"
             }
         } else if (components.month >= 2) {
             return "\(components.month)m"
@@ -54,7 +60,7 @@ class TweetCell: UITableViewCell {
             if (numericDates){
                 return "1m"
             } else {
-                return "Last month"
+                return "1m"
             }
         } else if (components.weekOfYear >= 2) {
             return "\(components.weekOfYear)w"
@@ -62,7 +68,7 @@ class TweetCell: UITableViewCell {
             if (numericDates){
                 return "1w"
             } else {
-                return "Last week"
+                return "1w"
             }
         } else if (components.day >= 2) {
             return "\(components.day)d"
@@ -70,7 +76,7 @@ class TweetCell: UITableViewCell {
             if (numericDates){
                 return "1d"
             } else {
-                return "Yesterday"
+                return "1d"
             }
         } else if (components.hour >= 2) {
             return "\(components.hour)h"
@@ -86,7 +92,7 @@ class TweetCell: UITableViewCell {
             if (numericDates){
                 return "1m"
             } else {
-                return "A minute ago"
+                return "1m"
             }
         } else if (components.second >= 3) {
             return "\(components.second)s"
@@ -96,6 +102,33 @@ class TweetCell: UITableViewCell {
         
     }
 
+    
+    
+    @IBAction func replyClicked(sender: AnyObject) {
+        // post to tweet
+        
+    }
+    
+    
+    @IBAction func retweetClicked(sender: AnyObject) {
+    }
+    
+    @IBAction func likeClicked(sender: AnyObject) {
+        var id = tweet.tweetID
+        
+        TwitterClient.sharedInstance.favoriteTweetWithCompletion(tweet.tweetID!) {
+            (error: NSError?) in
+            if error == nil {
+                print("favorting tweet succeeded")
+                self.tweet.favoriteCount! += 1
+                self.tweet.favorited = 1
+            } else {
+                print("favoriting tweet failed")
+            }
+        }
+    }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

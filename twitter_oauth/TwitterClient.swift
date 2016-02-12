@@ -39,7 +39,7 @@ class TwitterClient: BDBOAuth1SessionManager {
                 //                        print("home_timeline: \(response!)")
                 let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
                 for tweet in tweets {
-//                    print("text: \(tweet.text!), created: \(tweet.createdAt!)")
+                    //                    print("text: \(tweet.text!), created: \(tweet.createdAt!)")
                 }
                 completion(tweets: tweets, error: nil)
             },
@@ -48,6 +48,27 @@ class TwitterClient: BDBOAuth1SessionManager {
                 print(error)
                 completion(tweets: nil, error: error)
         })
+    }
+    
+    func favoriteTweetWithCompletion(tweetID: String, completion: (error: NSError?) -> ()) {
+        
+        if _currentUser != nil {
+            
+            let parameters = NSMutableDictionary()
+            parameters["id"] = tweetID
+            
+            
+            TwitterClient.sharedInstance.POST("1.1/favorites/create.json", parameters: parameters, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+                print("successfully favorited tweet")
+                completion(error: nil)
+                },
+                failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
+                    print("error favoriting")
+                    print(error)
+                    completion(error: error)
+                    // does not return anything else
+            })
+        }
     }
     
     func loginWithCompletion(completion: (user: User?, error: NSError?) -> ()) {

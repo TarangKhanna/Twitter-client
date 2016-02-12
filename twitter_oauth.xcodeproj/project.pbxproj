@@ -126,17 +126,16 @@
 		717892F51C6981630033370D /* twitter_oauth */ = {
 			isa = PBXGroup;
 			children = (
+				717892F61C6981630033370D /* AppDelegate.swift */,
 				7178932C1C69A08F0033370D /* API */,
 				7178933D1C6A8DFD0033370D /* Models */,
-				717892F61C6981630033370D /* AppDelegate.swift */,
-				717892F81C6981630033370D /* ViewController.swift */,
+				71A718FD1C6E594E0051F3D4 /* View */,
+				71A718FC1C6E59260051F3D4 /* View Controllers */,
 				717892FA1C6981630033370D /* Main.storyboard */,
 				717892FD1C6981630033370D /* Assets.xcassets */,
 				717892FF1C6981630033370D /* LaunchScreen.storyboard */,
 				717893021C6981630033370D /* Info.plist */,
 				71A718FA1C6E4EFF0051F3D4 /* keys.plist */,
-				71A718F31C6DB7200051F3D4 /* TweetsViewController.swift */,
-				71A718F51C6DC2E30051F3D4 /* TweetCell.swift */,
 			);
 			path = twitter_oauth;
 			sourceTree = "<group>";
@@ -175,6 +174,23 @@
 				71A718F71C6DCDC00051F3D4 /* twitter_oauth-Bridging-Header.h */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		71A718FC1C6E59260051F3D4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				717892F81C6981630033370D /* ViewController.swift */,
+				71A718F31C6DB7200051F3D4 /* TweetsViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		71A718FD1C6E594E0051F3D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71A718F51C6DC2E30051F3D4 /* TweetCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		E911DDC362C1A9FD433B07A3 /* Frameworks */ = {
