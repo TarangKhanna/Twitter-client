@@ -36,7 +36,7 @@ class TwitterClient: BDBOAuth1SessionManager {
                 //                        print("home_timeline: \(response!)")
                 let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
                 for tweet in tweets {
-                    print("text: \(tweet.text!), created: \(tweet.createdAt!)")
+//                    print("text: \(tweet.text!), created: \(tweet.createdAt!)")
                 }
                 completion(tweets: tweets, error: nil)
             },
