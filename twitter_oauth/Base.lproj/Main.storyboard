@@ -66,36 +66,35 @@
                                                         <constraint firstAttribute="width" constant="65" id="pXL-Lf-k1r"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-Z6-Blj">
-                                                    <rect key="frame" x="81" y="9" width="43" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2g-EL-7EZ">
-                                                    <rect key="frame" x="81" y="32" width="62" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-Z6-Blj">
+                                                    <rect key="frame" x="81" y="9" width="40.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELs-NK-nON">
-                                                    <rect key="frame" x="343.5" y="11" width="23.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2g-EL-7EZ">
+                                                    <rect key="frame" x="81" y="30.5" width="58" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.5425149937" green="0.5425149937" blue="0.5425149937" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScreenName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxr-On-qBT">
-                                                    <rect key="frame" x="146" y="11" width="83" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="133.5" y="11" width="78" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.5425149937" green="0.5425149937" blue="0.5425149937" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="10h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELs-NK-nON">
+                                                    <rect key="frame" x="346" y="11" width="20.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.5425149937" green="0.5425149937" blue="0.5425149937" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Cxr-On-qBT" secondAttribute="trailing" constant="146" id="0Yj-Q3-2g2"/>
                                                 <constraint firstItem="tac-Nq-1u9" firstAttribute="leading" secondItem="c3b-p7-Mza" secondAttribute="leading" constant="8" id="191-iw-zhh"/>
-                                                <constraint firstItem="Cxr-On-qBT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V1c-Z6-Blj" secondAttribute="trailing" constant="20" id="4vV-tY-4Lr"/>
-                                                <constraint firstItem="ELs-NK-nON" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cxr-On-qBT" secondAttribute="trailing" constant="12" id="Dx9-tG-DoW"/>
+                                                <constraint firstItem="Cxr-On-qBT" firstAttribute="leading" secondItem="V1c-Z6-Blj" secondAttribute="trailing" constant="12" id="4vV-tY-4Lr"/>
+                                                <constraint firstItem="ELs-NK-nON" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cxr-On-qBT" secondAttribute="trailing" constant="10" id="Dx9-tG-DoW"/>
                                                 <constraint firstItem="tac-Nq-1u9" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="9" id="Ev9-IU-EpM"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Cxr-On-qBT" secondAttribute="bottom" constant="20" id="JZU-RY-8aO"/>
                                                 <constraint firstItem="V1c-Z6-Blj" firstAttribute="leading" secondItem="tac-Nq-1u9" secondAttribute="trailing" constant="8" id="PzT-rE-xdK"/>

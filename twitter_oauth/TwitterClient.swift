@@ -42,6 +42,7 @@ class TwitterClient: BDBOAuth1SessionManager {
             },
             failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
                 print("error getting home timeline")
+                print(error)
                 completion(tweets: nil, error: error)
         })
     }
