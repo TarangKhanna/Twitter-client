@@ -73,7 +73,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2g-EL-7EZ">
-                                                    <rect key="frame" x="81" y="30.5" width="58" height="17"/>
+                                                    <rect key="frame" x="81" y="31" width="58" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -85,64 +85,68 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScreenName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxr-On-qBT">
-                                                    <rect key="frame" x="133.5" y="11" width="78" height="16"/>
+                                                    <rect key="frame" x="133" y="11" width="78" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.5425149937" green="0.5425149937" blue="0.5425149937" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbz-WE-Pgi">
-                                                    <rect key="frame" x="160" y="55.5" width="56" height="30"/>
-                                                    <state key="normal" title="Retweet"/>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbz-WE-Pgi">
+                                                    <rect key="frame" x="81" y="56" width="28" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="WDe-A4-btV"/>
+                                                        <constraint firstAttribute="width" constant="28" id="smA-MZ-E9q"/>
+                                                    </constraints>
+                                                    <state key="normal" image="retweet-action"/>
                                                     <connections>
                                                         <action selector="retweetClicked:" destination="fJ7-fa-ojU" eventType="touchUpInside" id="SyJ-xK-iwt"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwC-Rg-0Pc">
-                                                    <rect key="frame" x="272" y="55.5" width="30" height="30"/>
-                                                    <state key="normal" title="Like"/>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwC-Rg-0Pc">
+                                                    <rect key="frame" x="342" y="56" width="28" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="28" id="3Fc-do-FOH"/>
+                                                        <constraint firstAttribute="height" constant="30" id="N8p-Lo-Ov5"/>
+                                                    </constraints>
+                                                    <state key="normal" image="like-action"/>
                                                     <connections>
                                                         <action selector="likeClicked:" destination="fJ7-fa-ojU" eventType="touchUpInside" id="Te0-OE-baO"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-c3-ukQ">
-                                                    <rect key="frame" x="85" y="55.5" width="39" height="30"/>
-                                                    <state key="normal" title="Reply"/>
-                                                    <connections>
-                                                        <action selector="replyClicked:" destination="fJ7-fa-ojU" eventType="touchUpInside" id="h96-IF-ceQ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tac-Nq-1u9" firstAttribute="leading" secondItem="c3b-p7-Mza" secondAttribute="leading" constant="8" id="191-iw-zhh"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dwC-Rg-0Pc" secondAttribute="bottom" constant="10" id="2lm-up-KRe"/>
                                                 <constraint firstItem="Cxr-On-qBT" firstAttribute="leading" secondItem="V1c-Z6-Blj" secondAttribute="trailing" constant="12" id="4vV-tY-4Lr"/>
+                                                <constraint firstItem="dwC-Rg-0Pc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vbz-WE-Pgi" secondAttribute="trailing" constant="233" id="A1i-it-1JX"/>
+                                                <constraint firstItem="Vbz-WE-Pgi" firstAttribute="top" secondItem="t2g-EL-7EZ" secondAttribute="bottom" constant="8.5" id="ASF-aN-bvB"/>
+                                                <constraint firstItem="dwC-Rg-0Pc" firstAttribute="baseline" secondItem="Vbz-WE-Pgi" secondAttribute="baseline" id="Bhi-Xe-KKx"/>
                                                 <constraint firstItem="ELs-NK-nON" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cxr-On-qBT" secondAttribute="trailing" constant="10" id="Dx9-tG-DoW"/>
-                                                <constraint firstItem="YJO-c3-ukQ" firstAttribute="leading" secondItem="tac-Nq-1u9" secondAttribute="trailing" constant="12" id="EKB-iU-FuF"/>
                                                 <constraint firstItem="tac-Nq-1u9" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="9" id="Ev9-IU-EpM"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dwC-Rg-0Pc" secondAttribute="trailing" constant="5" id="GoV-yD-DaX"/>
+                                                <constraint firstItem="Vbz-WE-Pgi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tac-Nq-1u9" secondAttribute="trailing" constant="8" id="Idf-2Q-aRg"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Cxr-On-qBT" secondAttribute="bottom" constant="20" id="JZU-RY-8aO"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Vbz-WE-Pgi" secondAttribute="bottom" constant="20" id="NqV-PD-S8y"/>
                                                 <constraint firstItem="V1c-Z6-Blj" firstAttribute="leading" secondItem="tac-Nq-1u9" secondAttribute="trailing" constant="8" id="PzT-rE-xdK"/>
                                                 <constraint firstItem="Cxr-On-qBT" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="11" id="VG0-cT-wza"/>
                                                 <constraint firstItem="t2g-EL-7EZ" firstAttribute="leading" secondItem="tac-Nq-1u9" secondAttribute="trailing" constant="8" id="WRk-PH-hrG"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YJO-c3-ukQ" secondAttribute="bottom" constant="10" id="dE7-RX-K9D"/>
-                                                <constraint firstItem="dwC-Rg-0Pc" firstAttribute="baseline" secondItem="YJO-c3-ukQ" secondAttribute="baseline" id="db6-ZM-tvG"/>
                                                 <constraint firstItem="t2g-EL-7EZ" firstAttribute="top" secondItem="V1c-Z6-Blj" secondAttribute="bottom" constant="4" id="eo5-9U-II5"/>
-                                                <constraint firstItem="Vbz-WE-Pgi" firstAttribute="baseline" secondItem="YJO-c3-ukQ" secondAttribute="baseline" id="gmD-Fz-3xE"/>
-                                                <constraint firstItem="dwC-Rg-0Pc" firstAttribute="leading" secondItem="Vbz-WE-Pgi" secondAttribute="trailing" constant="56" id="hQr-Sc-6yd"/>
-                                                <constraint firstItem="Vbz-WE-Pgi" firstAttribute="leading" secondItem="YJO-c3-ukQ" secondAttribute="trailing" constant="36" id="k1x-Xk-nVJ"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dwC-Rg-0Pc" secondAttribute="bottom" constant="20" id="kjy-07-r1c"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ELs-NK-nON" secondAttribute="bottom" constant="20" id="muO-f5-Jpn"/>
                                                 <constraint firstItem="V1c-Z6-Blj" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="9" id="pAd-GZ-4Ww"/>
                                                 <constraint firstAttribute="trailing" secondItem="ELs-NK-nON" secondAttribute="trailing" constant="8" id="qGb-oV-lzj"/>
                                                 <constraint firstItem="ELs-NK-nON" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="11" id="tg0-E1-F2y"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Vbz-WE-Pgi" secondAttribute="bottom" constant="10" id="ya5-VQ-Hfz"/>
+                                                <constraint firstAttribute="trailing" secondItem="dwC-Rg-0Pc" secondAttribute="trailing" constant="5" id="yH6-WO-Dsb"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t2g-EL-7EZ" secondAttribute="trailing" constant="12" id="ybi-tI-CSn"/>
-                                                <constraint firstItem="YJO-c3-ukQ" firstAttribute="top" secondItem="t2g-EL-7EZ" secondAttribute="bottom" constant="8" id="zku-kV-S73"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="yH6-WO-Dsb"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="likeButton" destination="dwC-Rg-0Pc" id="wNF-ts-cBy"/>
                                             <outlet property="messageLabel" destination="t2g-EL-7EZ" id="esS-dJ-BmF"/>
                                             <outlet property="nameLabel" destination="V1c-Z6-Blj" id="QlZ-bc-R2T"/>
-                                            <outlet property="replyButton" destination="YJO-c3-ukQ" id="uvb-dG-67f"/>
                                             <outlet property="retweetButton" destination="Vbz-WE-Pgi" id="Les-eR-c2z"/>
                                             <outlet property="screenNameLabel" destination="Cxr-On-qBT" id="K5S-ra-ReX"/>
                                             <outlet property="timeLabel" destination="ELs-NK-nON" id="EPB-xv-JXj"/>
@@ -201,4 +205,8 @@
             <point key="canvasLocation" x="1041.5" y="281.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="like-action" width="27" height="36"/>
+        <image name="retweet-action" width="37" height="36"/>
+    </resources>
 </document>
