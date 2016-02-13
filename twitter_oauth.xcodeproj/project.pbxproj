@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		715F37611C6FC9E100D7D2A0 /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F37601C6FC9E100D7D2A0 /* InfiniteScrollActivityView.swift */; };
 		717892F71C6981630033370D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717892F61C6981630033370D /* AppDelegate.swift */; };
 		717892F91C6981630033370D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717892F81C6981630033370D /* ViewController.swift */; };
 		717892FC1C6981630033370D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717892FA1C6981630033370D /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		56393B45B31F5A7D9C075951 /* Pods-twitter_oauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter_oauth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter_oauth/Pods-twitter_oauth.debug.xcconfig"; sourceTree = "<group>"; };
 		57D50F1562751ED3B1F18399 /* Pods-twitter_oauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter_oauth.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter_oauth/Pods-twitter_oauth.release.xcconfig"; sourceTree = "<group>"; };
+		715F37601C6FC9E100D7D2A0 /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
 		717892F31C6981630033370D /* twitter_oauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter_oauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		717892F61C6981630033370D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		717892F81C6981630033370D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		71A718FD1C6E594E0051F3D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				715F37601C6FC9E100D7D2A0 /* InfiniteScrollActivityView.swift */,
 				71A718F51C6DC2E30051F3D4 /* TweetCell.swift */,
 			);
 			name = View;
@@ -387,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				715F37611C6FC9E100D7D2A0 /* InfiniteScrollActivityView.swift in Sources */,
 				7178933F1C6A8E570033370D /* User.swift in Sources */,
 				71A718F61C6DC2E30051F3D4 /* TweetCell.swift in Sources */,
 				717893411C6A8E660033370D /* Tweet.swift in Sources */,

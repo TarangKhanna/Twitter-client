@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class TweetCell: UITableViewCell {
     
@@ -117,6 +118,7 @@ class TweetCell: UITableViewCell {
             (error: NSError?) in
             if error == nil {
                 print("retweet suceeded")
+                SCLAlertView().showInfo("Retweeted", subTitle: "Successful")
                 self.tweet.retweeted = 1
                 self.tweet.retweetCount! += 1
             } else {
@@ -132,6 +134,7 @@ class TweetCell: UITableViewCell {
             (error: NSError?) in
             if error == nil {
                 print("favorting tweet succeeded")
+                SCLAlertView().showInfo("Liked", subTitle: "Successful")
                 self.tweet.favoriteCount! += 1
                 self.tweet.favorited = 1
             } else {

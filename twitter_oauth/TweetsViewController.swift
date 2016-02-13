@@ -16,7 +16,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
+    var numPages = 0
     var tweets: [Tweet]?
+    var loadingMoreView:InfiniteScrollActivityView?
+    var isMoreDataLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +28,23 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
         
+        // Set up Infinite Scroll loading indicator
+        let frame = CGRectMake(0, tableView.contentSize.height, tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.hidden = true
+        tableView.addSubview(loadingMoreView!)
+        
+        var insets = tableView.contentInset;
+        insets.bottom += InfiniteScrollActivityView.defaultHeight;
+        tableView.contentInset = insets
+        
         retrieve()
         
         // Pull to refresh
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor.whiteColor()
         tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
-            self!.retrieve()
+            self!.refresh()
             self?.tableView.dg_stopLoading()
             }, loadingView: loadingView)
         tableView.dg_setPullToRefreshFillColor(UIColor(red: 51/255, green: 139/255, blue: 182/255, alpha: 1))
@@ -39,7 +52,39 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
+    func loadMoreData() {
+        let parameters = NSMutableDictionary()
+        numPages += 20
+        parameters["count"] = numPages
+        
+        TwitterClient.sharedInstance.homeTimelineWithCompletion(parameters, completion: {(tweets,
+            error) -> () in
+            self.tweets = tweets
+            self.isMoreDataLoading = false
+            self.loadingMoreView!.stopAnimating()
+            self.tableView.reloadData()
+            // reload tableview
+            // understand post logic
+        })
+    }
+    
+    func refresh () {
+        let parameters = NSMutableDictionary()
+        parameters["count"] = numPages
+        TwitterClient.sharedInstance.homeTimelineWithCompletion(parameters, completion: {(tweets,
+            error) -> () in
+            self.tweets = tweets
+            self.tableView.reloadData()
+            // reload tableview
+            // understand post logic
+        })
+
+    }
+    
     func retrieve() {
+        
+        numPages = 20
+        
         TwitterClient.sharedInstance.homeTimelineWithCompletion(nil, completion: {(tweets,
             error) -> () in
             self.tweets = tweets
@@ -47,6 +92,30 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             // reload tableview
             // understand post logic
         })
+    }
+    
+    // Infinite scroll
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if (!isMoreDataLoading) {
+            // Calculate the position of one screen length before the bottom of the results
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            
+            // When the user has scrolled past the threshold, start requesting
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.dragging) {
+                isMoreDataLoading = true
+                // Update position of loadingMoreView, and start loading indicator
+                let frame = CGRectMake(0, tableView.contentSize.height, tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight)
+                loadingMoreView?.frame = frame
+                loadingMoreView!.startAnimating()
+//                self.pages += 1
+                loadMoreData()
+                // ... Code to load more results ...
+            }
+            // ... Code to load more results ...
+            
+        }
     }
     
     @IBAction func onLogout(sender: AnyObject) {
