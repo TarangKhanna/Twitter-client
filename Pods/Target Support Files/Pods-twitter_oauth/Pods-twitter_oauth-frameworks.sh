@@ -87,13 +87,17 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-twitter_oauth/AFNetworking.framework"
   install_framework "Pods-twitter_oauth/BDBOAuth1Manager.framework"
   install_framework "Pods-twitter_oauth/DGActivityIndicatorView.framework"
+  install_framework "Pods-twitter_oauth/DGElasticPullToRefresh.framework"
   install_framework "Pods-twitter_oauth/ElasticTransition.framework"
   install_framework "Pods-twitter_oauth/MotionAnimation.framework"
+  install_framework "Pods-twitter_oauth/SCLAlertView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-twitter_oauth/AFNetworking.framework"
   install_framework "Pods-twitter_oauth/BDBOAuth1Manager.framework"
   install_framework "Pods-twitter_oauth/DGActivityIndicatorView.framework"
+  install_framework "Pods-twitter_oauth/DGElasticPullToRefresh.framework"
   install_framework "Pods-twitter_oauth/ElasticTransition.framework"
   install_framework "Pods-twitter_oauth/MotionAnimation.framework"
+  install_framework "Pods-twitter_oauth/SCLAlertView.framework"
 fi

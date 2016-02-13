@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BE601B1FE50ED413CBFF9CD6'
+               BlueprintIdentifier = 'D3CEE0D09D1A2480D8E69A49'
                BlueprintName = 'ElasticTransition'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ElasticTransition.framework'>

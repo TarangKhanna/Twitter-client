@@ -57,7 +57,6 @@ class TwitterClient: BDBOAuth1SessionManager {
             let parameters = NSMutableDictionary()
             parameters["id"] = tweetID
             
-            
             TwitterClient.sharedInstance.POST("1.1/favorites/create.json", parameters: parameters, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
                 print("successfully favorited tweet")
                 completion(error: nil)
@@ -67,6 +66,23 @@ class TwitterClient: BDBOAuth1SessionManager {
                     print(error)
                     completion(error: error)
                     // does not return anything else
+            })
+        }
+    }
+    
+    func sendRetweetWithCompletion(tweetID: String, completion: (error: NSError?) -> ()) {
+        
+        if _currentUser != nil {
+            
+            TwitterClient.sharedInstance.POST("https://api.twitter.com/1.1/statuses/retweet/\(tweetID).json", parameters: nil, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+                print("successfully sent retweet")
+                completion(error: nil)
+                },
+                failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
+                    print("error retweeting")
+                    print(error)
+                    completion(error: error)
+                    // does not return anything else since it is a POST
             })
         }
     }

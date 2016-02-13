@@ -8,6 +8,8 @@ target 'twitter_oauth' do
     pod 'BDBOAuth1Manager'
     pod 'DGActivityIndicatorView'
     pod "ElasticTransition"
+    pod 'SCLAlertView'
+    pod "DGElasticPullToRefresh"
 end
 
 target 'twitter_oauthTests' do

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import DGElasticPullToRefresh
+import DGActivityIndicatorView
+import ElasticTransition
 
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -22,6 +25,21 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
         
+        retrieve()
+        
+        // Pull to refresh
+        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+        loadingView.tintColor = UIColor.whiteColor()
+        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+            self!.retrieve()
+            self?.tableView.dg_stopLoading()
+            }, loadingView: loadingView)
+        tableView.dg_setPullToRefreshFillColor(UIColor(red: 51/255, green: 139/255, blue: 182/255, alpha: 1))
+        tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
+        
+    }
+    
+    func retrieve() {
         TwitterClient.sharedInstance.homeTimelineWithCompletion(nil, completion: {(tweets,
             error) -> () in
             self.tweets = tweets
@@ -52,5 +70,14 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    deinit {
+        tableView.dg_removePullToRefresh()
+    }
+}
 
+extension UIScrollView {
+    // to fix a problem where all the constraints of the tableview
+    // are deleted
+    func dg_stopScrollingAnimation() {}
 }

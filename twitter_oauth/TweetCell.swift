@@ -111,6 +111,18 @@ class TweetCell: UITableViewCell {
     
     
     @IBAction func retweetClicked(sender: AnyObject) {
+        var id = tweet.tweetID
+    
+        TwitterClient.sharedInstance.sendRetweetWithCompletion(tweet.tweetID!) {
+            (error: NSError?) in
+            if error == nil {
+                print("retweet suceeded")
+                self.tweet.retweeted = 1
+                self.tweet.retweetCount! += 1
+            } else {
+                print("retweet failed")
+            }
+        }
     }
     
     @IBAction func likeClicked(sender: AnyObject) {
