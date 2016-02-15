@@ -38,7 +38,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+AutoLayout was time consuming, twitter API time limit for the calls was also a difficulty. 
 
 ## License
 
