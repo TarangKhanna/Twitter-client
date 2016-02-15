@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9L-hR-Chq">
-                                <rect key="frame" x="0.0" y="319" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="319" width="375" height="44"/>
                                 <color key="backgroundColor" red="0.1137254902" green="0.5568627451" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login To Twitter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,7 +30,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d9L-hR-Chq" secondAttribute="bottom" constant="318" id="eLW-RN-PG5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d9L-hR-Chq" secondAttribute="bottom" constant="304" id="eLW-RN-PG5"/>
                             <constraint firstItem="d9L-hR-Chq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pgb-Pc-ykl"/>
                             <constraint firstItem="d9L-hR-Chq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="299" id="qfG-ie-5ae"/>
                             <constraint firstAttribute="trailing" secondItem="d9L-hR-Chq" secondAttribute="trailing" id="vHv-gv-ED7"/>
@@ -38,7 +38,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="fy6-wt-0di" kind="presentation" identifier="loginSegue" id="6yl-6Q-93G"/>
+                        <segue destination="fy6-wt-0di" kind="presentation" identifier="loginSegue" modalTransitionStyle="partialCurl" id="6yl-6Q-93G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
