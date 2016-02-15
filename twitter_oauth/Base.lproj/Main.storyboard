@@ -121,6 +121,18 @@
                                                         <action selector="likeClicked:" destination="fJ7-fa-ojU" eventType="touchUpInside" id="Te0-OE-baO"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="448-4A-iSh">
+                                                    <rect key="frame" x="117" y="62" width="42" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3In-V7-f8Y">
+                                                    <rect key="frame" x="219" y="62" width="42" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tac-Nq-1u9" firstAttribute="leading" secondItem="c3b-p7-Mza" secondAttribute="leading" constant="8" id="191-iw-zhh"/>
@@ -128,20 +140,26 @@
                                                 <constraint firstItem="Vbz-WE-Pgi" firstAttribute="top" secondItem="t2g-EL-7EZ" secondAttribute="bottom" constant="8.5" id="ASF-aN-bvB"/>
                                                 <constraint firstItem="ELs-NK-nON" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cxr-On-qBT" secondAttribute="trailing" constant="10" id="Dx9-tG-DoW"/>
                                                 <constraint firstItem="tac-Nq-1u9" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="9" id="Ev9-IU-EpM"/>
+                                                <constraint firstItem="3In-V7-f8Y" firstAttribute="centerY" secondItem="Vbz-WE-Pgi" secondAttribute="centerY" id="FeG-uQ-WYq"/>
+                                                <constraint firstItem="448-4A-iSh" firstAttribute="centerY" secondItem="Vbz-WE-Pgi" secondAttribute="centerY" id="Gc9-Mw-Z2b"/>
                                                 <constraint firstItem="Vbz-WE-Pgi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tac-Nq-1u9" secondAttribute="trailing" constant="8" id="Idf-2Q-aRg"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Cxr-On-qBT" secondAttribute="bottom" constant="20" id="JZU-RY-8aO"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Vbz-WE-Pgi" secondAttribute="bottom" constant="9" id="NqV-PD-S8y"/>
                                                 <constraint firstItem="V1c-Z6-Blj" firstAttribute="leading" secondItem="tac-Nq-1u9" secondAttribute="trailing" constant="8" id="PzT-rE-xdK"/>
                                                 <constraint firstItem="dwC-Rg-0Pc" firstAttribute="leading" secondItem="Vbz-WE-Pgi" secondAttribute="trailing" constant="74" id="ULr-Bg-d2m"/>
                                                 <constraint firstItem="Cxr-On-qBT" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="11" id="VG0-cT-wza"/>
+                                                <constraint firstItem="3In-V7-f8Y" firstAttribute="leading" secondItem="dwC-Rg-0Pc" secondAttribute="trailing" constant="8" id="W0P-Ol-m2I"/>
                                                 <constraint firstItem="t2g-EL-7EZ" firstAttribute="leading" secondItem="tac-Nq-1u9" secondAttribute="trailing" constant="8" id="WRk-PH-hrG"/>
+                                                <constraint firstItem="448-4A-iSh" firstAttribute="leading" secondItem="Vbz-WE-Pgi" secondAttribute="trailing" constant="8" id="Z4m-SG-TN8"/>
                                                 <constraint firstItem="dwC-Rg-0Pc" firstAttribute="baseline" secondItem="Vbz-WE-Pgi" secondAttribute="baseline" id="cvK-W8-7SG"/>
+                                                <constraint firstAttribute="trailing" secondItem="3In-V7-f8Y" secondAttribute="trailing" constant="114" id="dhF-vV-hc8"/>
                                                 <constraint firstItem="t2g-EL-7EZ" firstAttribute="top" secondItem="V1c-Z6-Blj" secondAttribute="bottom" constant="4" id="eo5-9U-II5"/>
                                                 <constraint firstAttribute="trailing" secondItem="dwC-Rg-0Pc" secondAttribute="trailing" constant="164" id="iGp-De-pGB"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ELs-NK-nON" secondAttribute="bottom" constant="20" id="muO-f5-Jpn"/>
                                                 <constraint firstItem="V1c-Z6-Blj" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="9" id="pAd-GZ-4Ww"/>
                                                 <constraint firstAttribute="trailing" secondItem="ELs-NK-nON" secondAttribute="trailing" constant="8" id="qGb-oV-lzj"/>
                                                 <constraint firstItem="ELs-NK-nON" firstAttribute="top" secondItem="c3b-p7-Mza" secondAttribute="top" constant="11" id="tg0-E1-F2y"/>
+                                                <constraint firstItem="dwC-Rg-0Pc" firstAttribute="leading" secondItem="448-4A-iSh" secondAttribute="trailing" constant="24" id="vzS-Ls-H5S"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dwC-Rg-0Pc" secondAttribute="bottom" constant="9" id="x0e-u7-C40"/>
                                                 <constraint firstAttribute="trailing" secondItem="dwC-Rg-0Pc" secondAttribute="trailing" constant="5" id="yH6-WO-Dsb"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t2g-EL-7EZ" secondAttribute="trailing" constant="12" id="ybi-tI-CSn"/>
@@ -153,10 +171,12 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="favoriteLabel" destination="3In-V7-f8Y" id="ehm-UB-PdU"/>
                                             <outlet property="likeButton" destination="dwC-Rg-0Pc" id="wNF-ts-cBy"/>
                                             <outlet property="messageLabel" destination="t2g-EL-7EZ" id="esS-dJ-BmF"/>
                                             <outlet property="nameLabel" destination="V1c-Z6-Blj" id="QlZ-bc-R2T"/>
                                             <outlet property="retweetButton" destination="Vbz-WE-Pgi" id="Les-eR-c2z"/>
+                                            <outlet property="retweetLabel" destination="448-4A-iSh" id="JvN-ML-Ley"/>
                                             <outlet property="screenNameLabel" destination="Cxr-On-qBT" id="K5S-ra-ReX"/>
                                             <outlet property="timeLabel" destination="ELs-NK-nON" id="EPB-xv-JXj"/>
                                             <outlet property="userImage" destination="tac-Nq-1u9" id="JbW-8s-uMV"/>

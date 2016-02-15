@@ -70,6 +70,26 @@ class TwitterClient: BDBOAuth1SessionManager {
         }
     }
     
+    func unFavoriteTweetWithCompletion(tweetID: String, completion: (error: NSError?) -> ()) {
+        
+        if _currentUser != nil {
+            
+            let parameters = NSMutableDictionary()
+            parameters["id"] = tweetID
+            
+            TwitterClient.sharedInstance.POST("1.1/favorites/delete.json", parameters: parameters, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+                print("successfully unfavorited tweet")
+                completion(error: nil)
+                },
+                failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
+                    print("error unfavoriting")
+                    print(error)
+                    completion(error: error)
+                    // does not return anything else
+            })
+        }
+    }
+    
     func sendRetweetWithCompletion(tweetID: String, completion: (error: NSError?) -> ()) {
         
         if _currentUser != nil {

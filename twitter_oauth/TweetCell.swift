@@ -23,6 +23,10 @@ class TweetCell: UITableViewCell {
     
     @IBOutlet weak var replyButton: UIButton!
     
+    @IBOutlet weak var retweetLabel: UILabel!
+    
+    @IBOutlet weak var favoriteLabel: UILabel!
+    
     @IBOutlet weak var retweetButton: UIButton!
     
     @IBOutlet weak var likeButton: UIButton!
@@ -129,6 +133,9 @@ class TweetCell: UITableViewCell {
     
     @IBAction func likeClicked(sender: AnyObject) {
         var id = tweet.tweetID
+        
+        // if already liked - call GET favorites/list to find out by matching twitter id
+        // unfavorite - POST favorites/destroy
         
         TwitterClient.sharedInstance.favoriteTweetWithCompletion(tweet.tweetID!) {
             (error: NSError?) in
