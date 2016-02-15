@@ -70,24 +70,19 @@ class TwitterClient: BDBOAuth1SessionManager {
         }
     }
     
-    func unFavoriteTweetWithCompletion(tweetID: String, completion: (error: NSError?) -> ()) {
+    func unFavoriteTweetWithCompletion(ID: String, completion: (response: NSDictionary?, error: NSError?) -> ()) {
+        let parameters = NSMutableDictionary()
+        parameters["id"] = ID
         
-        if _currentUser != nil {
-            
-            let parameters = NSMutableDictionary()
-            parameters["id"] = tweetID
-            
-            TwitterClient.sharedInstance.POST("1.1/favorites/delete.json", parameters: parameters, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
-                print("successfully unfavorited tweet")
-                completion(error: nil)
-                },
-                failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
-                    print("error unfavoriting")
-                    print(error)
-                    completion(error: error)
-                    // does not return anything else
-            })
-        }
+        POST("1.1/favorites/destroy.json", parameters: parameters, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            print("unFavorited")
+            completion(response: response as? NSDictionary, error: nil)
+            },
+            failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
+                print("error unFavoriting")
+                print(error)
+                completion(response: nil, error: error)
+        })
     }
     
     func sendRetweetWithCompletion(tweetID: String, completion: (error: NSError?) -> ()) {
@@ -105,6 +100,19 @@ class TwitterClient: BDBOAuth1SessionManager {
                     // does not return anything else since it is a POST
             })
         }
+    }
+    
+    func sendUnRetweetWithCompletion(ID: String, completion: (response: NSDictionary?, error: NSError?) -> ()) {
+        if _currentUser != nil {
+            POST("https://api.twitter.com/1.1/statuses/unretweet/\(ID).json", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+                completion(response: response as? NSDictionary, error: nil)
+                print("unretweeted")
+                }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                    completion(response: nil, error: error)
+                    print("error unretweeting")
+            }
+        }
+        
     }
     
     func loginWithCompletion(completion: (user: User?, error: NSError?) -> ()) {

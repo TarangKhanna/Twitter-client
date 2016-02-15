@@ -13,11 +13,12 @@ class Tweet: NSObject {
     var text: String?
     var createdAtString: String?
     var createdAt: NSDate?
-    var favorited: Int?
+    var favorited: Bool?
     var retweetCount: Int?
-    var retweeted: Int?
+    var retweeted: Bool?
     var tweetID: String?
     var favoriteCount: Int?
+    
     
     init(dictionary: NSDictionary) {
         user = User(dictionary: dictionary["user"] as! NSDictionary)
@@ -29,9 +30,9 @@ class Tweet: NSObject {
         createdAt = formatter.dateFromString(createdAtString!)
         // use lazy when you need the variable
         
-        favorited = dictionary["favorited"] as? Int
+        favorited = dictionary["favorited"] as? Bool
         retweetCount = dictionary["retweet_count"] as? Int
-        retweeted = dictionary["retweeted"] as? Int
+        retweeted = dictionary["retweeted"] as? Bool
         tweetID = dictionary["id_str"] as? String
         favoriteCount = dictionary["favorite_count"] as? Int
     }

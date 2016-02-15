@@ -21,6 +21,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     var loadingMoreView:InfiniteScrollActivityView?
     var isMoreDataLoading = false
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -39,6 +40,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.contentInset = insets
         
         retrieve()
+        
+        let image = UIImageView(image: UIImage(named: "Twitter_logo_blue_48"))
+        self.navigationItem.titleView = image
+
         
         // Pull to refresh
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()

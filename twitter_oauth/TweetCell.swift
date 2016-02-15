@@ -32,6 +32,8 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     
     
+    
+    
     var tweet: Tweet! {
         didSet {
             
@@ -40,6 +42,26 @@ class TweetCell: UITableViewCell {
             self.screenNameLabel.text = "@\(tweet.user!.screenname!)"
             self.messageLabel.text = tweet?.text
             self.timeLabel.text = "\(timeAgoSinceDate((tweet?.createdAt)!, numericDates: false))"
+            
+            if tweet.retweeted! {
+                self.retweetButton.setImage(UIImage(named: "retweet-action-on"), forState: .Normal)
+                self.retweetLabel.textColor = UIColor(red: 0, green: 207/255.0, blue: 141/255.0, alpha: 1)
+                self.retweetLabel.text = "\(tweet.retweetCount!)"
+            } else {
+                self.retweetButton.setImage(UIImage(named: "retweet-action"), forState: .Normal)
+                self.retweetLabel.textColor = UIColor(red: 169/255.0, green: 184/255.0, blue: 193/255.0, alpha: 1)
+                self.retweetLabel.text = "\(tweet.retweetCount!)"
+            }
+            
+            if  tweet.favorited! {
+                self.likeButton.setImage(UIImage(named: "like-action-on"), forState: .Normal)
+                self.favoriteLabel.textColor = UIColor(red: 238/255.0, green: 22/255.0, blue: 79/255.0, alpha: 1)
+                self.favoriteLabel.text = "\(tweet.favoriteCount!)"
+            } else {
+                self.likeButton.setImage(UIImage(named: "like-action"), forState: .Normal)
+                self.favoriteLabel.textColor = UIColor(red: 169/255.0, green: 184/255.0, blue: 193/255.0, alpha: 1)
+                self.favoriteLabel.text = "\(tweet.favoriteCount!)"
+            }
         }
     }
     
@@ -117,16 +139,31 @@ class TweetCell: UITableViewCell {
     
     @IBAction func retweetClicked(sender: AnyObject) {
         var id = tweet.tweetID
-    
-        TwitterClient.sharedInstance.sendRetweetWithCompletion(tweet.tweetID!) {
-            (error: NSError?) in
-            if error == nil {
-                print("retweet suceeded")
-                SCLAlertView().showInfo("Retweeted", subTitle: "Successful")
-                self.tweet.retweeted = 1
-                self.tweet.retweetCount! += 1
-            } else {
-                print("retweet failed")
+        
+        if tweet!.retweeted! {
+            TwitterClient.sharedInstance.sendUnRetweetWithCompletion((tweet.tweetID)!, completion: { (response, error) -> () in
+                self.retweetButton.setImage(UIImage(named: "retweet-action"), forState: .Normal)
+                self.tweet!.retweetCount! -= 1
+                self.tweet?.retweeted = false
+                self.retweetLabel.textColor = UIColor(red: 169/255.0, green: 184/255.0, blue: 193/255.0, alpha: 1)
+                self.retweetLabel.text = "\((self.tweet?.retweetCount!)!)"
+            })
+            
+        } else {
+            TwitterClient.sharedInstance.sendRetweetWithCompletion(tweet.tweetID!) {
+                (error: NSError?) in
+                if error == nil {
+                    print("retweet suceeded")
+//                    SCLAlertView().showInfo("Retweeted", subTitle: "Successful")
+                    self.retweetButton.setImage(UIImage(named: "retweet-action-on"), forState: .Normal)
+                    self.tweet.retweeted = true
+                    self.tweet.retweetCount! += 1
+                    self.tweet?.retweeted = true
+                    self.retweetLabel.textColor = UIColor(red: 0, green: 207/255.0, blue: 141/255.0, alpha: 1)
+                    self.retweetLabel.text = "\((self.tweet?.retweetCount!)!)"
+                } else {
+                    print("retweet failed")
+                }
             }
         }
     }
@@ -137,15 +174,29 @@ class TweetCell: UITableViewCell {
         // if already liked - call GET favorites/list to find out by matching twitter id
         // unfavorite - POST favorites/destroy
         
-        TwitterClient.sharedInstance.favoriteTweetWithCompletion(tweet.tweetID!) {
-            (error: NSError?) in
-            if error == nil {
-                print("favorting tweet succeeded")
-                SCLAlertView().showInfo("Liked", subTitle: "Successful")
-                self.tweet.favoriteCount! += 1
-                self.tweet.favorited = 1
-            } else {
-                print("favoriting tweet failed")
+        if tweet!.favorited! {
+            TwitterClient.sharedInstance.sendUnRetweetWithCompletion((tweet?.tweetID)!, completion: { (response, error) -> () in
+                self.likeButton.setImage(UIImage(named: "like-action"), forState: .Normal)
+                self.tweet?.favoriteCount! -= 1
+                self.tweet!.favorited = false
+                self.favoriteLabel.textColor = UIColor(red: 169/255.0, green: 184/255.0, blue: 193/255.0, alpha: 1)
+                self.favoriteLabel.text = "\((self.tweet?.favoriteCount!)!)"
+            })
+            
+        } else {
+            TwitterClient.sharedInstance.favoriteTweetWithCompletion(tweet.tweetID!) {
+                (error: NSError?) in
+                if error == nil {
+                    print("favorting tweet succeeded")
+//                    SCLAlertView().showInfo("Liked", subTitle: "Successful")
+                    self.likeButton.setImage(UIImage(named: "like-action-on"), forState: .Normal)
+                    self.tweet.favoriteCount! += 1
+                    self.tweet.favorited = true
+                    self.favoriteLabel.textColor = UIColor(red: 238/255.0, green: 22/255.0, blue: 79/255.0, alpha: 1)
+                    self.favoriteLabel.text = "\((self.tweet?.favoriteCount!)!)"
+                } else {
+                    print("favoriting tweet failed")
+                }
             }
         }
     }
@@ -153,6 +204,8 @@ class TweetCell: UITableViewCell {
     
     
     override func awakeFromNib() {
+        userImage.layer.cornerRadius = 8
+        userImage.clipsToBounds = true
         super.awakeFromNib()
     }
 }
