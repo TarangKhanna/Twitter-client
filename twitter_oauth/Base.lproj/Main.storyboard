@@ -273,8 +273,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsT-SA-RPZ">
-                                <rect key="frame" x="128" y="212" width="33" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <rect key="frame" x="128" y="212" width="35.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -325,7 +325,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAVORITES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7b-OF-31e">
-                                <rect key="frame" x="169" y="212" width="69" height="16"/>
+                                <rect key="frame" x="171" y="212" width="69" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -336,6 +336,7 @@
                             <constraint firstItem="J0t-VH-k6Y" firstAttribute="top" secondItem="Mz3-qq-T2b" secondAttribute="bottom" constant="8" id="3FN-TF-6me"/>
                             <constraint firstItem="owQ-cu-TlU" firstAttribute="top" secondItem="GsF-VY-VIn" secondAttribute="bottom" constant="23" id="3px-MF-5Tc"/>
                             <constraint firstItem="owQ-cu-TlU" firstAttribute="leading" secondItem="Qxg-e2-Buk" secondAttribute="trailing" constant="3" id="4mb-Rh-d6z"/>
+                            <constraint firstItem="S7b-OF-31e" firstAttribute="baseline" secondItem="EfV-ss-FO8" secondAttribute="baseline" id="5wt-MK-Yy9"/>
                             <constraint firstItem="Vg9-x2-oew" firstAttribute="top" secondItem="owQ-cu-TlU" secondAttribute="bottom" constant="8" id="6Fm-Q3-WyZ"/>
                             <constraint firstItem="EfV-ss-FO8" firstAttribute="leading" secondItem="Mz3-qq-T2b" secondAttribute="trailing" constant="5" id="7iF-KQ-XaY"/>
                             <constraint firstItem="B2k-LU-gNr" firstAttribute="leading" secondItem="P08-T7-zVF" secondAttribute="leading" constant="26" id="950-sH-Qqq"/>
@@ -356,8 +357,8 @@
                             <constraint firstItem="ch0-UU-EwG" firstAttribute="leading" secondItem="P08-T7-zVF" secondAttribute="leading" constant="5" id="bXa-zx-b1K"/>
                             <constraint firstItem="Xpt-4P-h65" firstAttribute="leading" secondItem="uDb-kM-OrY" secondAttribute="trailing" constant="67" id="cat-YE-lDW"/>
                             <constraint firstItem="Qxg-e2-Buk" firstAttribute="top" secondItem="GsF-VY-VIn" secondAttribute="bottom" constant="23" id="edz-1m-5le"/>
-                            <constraint firstItem="8af-YM-R5J" firstAttribute="top" secondItem="ch0-UU-EwG" secondAttribute="bottom" constant="392" id="f4q-1F-mP1"/>
                             <constraint firstItem="Vg9-x2-oew" firstAttribute="leading" secondItem="Qxg-e2-Buk" secondAttribute="trailing" constant="3" id="hNG-um-unG"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TW0-Gg-pSm" secondAttribute="trailing" constant="12" id="nf5-MS-aSc"/>
                             <constraint firstItem="uDb-kM-OrY" firstAttribute="leading" secondItem="B2k-LU-gNr" secondAttribute="trailing" constant="75" id="rDx-eO-2FT"/>
                             <constraint firstItem="wsT-SA-RPZ" firstAttribute="top" secondItem="gdn-l4-AM2" secondAttribute="bottom" constant="3.5" id="rxj-V9-Uvp"/>
                             <constraint firstItem="ch0-UU-EwG" firstAttribute="top" secondItem="B2k-LU-gNr" secondAttribute="bottom" constant="2" id="sCZ-xQ-vOo"/>
@@ -367,6 +368,18 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="favoriteLabel" destination="wsT-SA-RPZ" id="zV1-Pt-6pV"/>
+                        <outlet property="likeButton" destination="Xpt-4P-h65" id="o6g-8W-Rup"/>
+                        <outlet property="messageLabel" destination="TW0-Gg-pSm" id="hyv-KO-gtl"/>
+                        <outlet property="nameLabel" destination="owQ-cu-TlU" id="JcE-bY-1Dq"/>
+                        <outlet property="replyButton" destination="B2k-LU-gNr" id="44b-Wy-6Sg"/>
+                        <outlet property="retweetButton" destination="uDb-kM-OrY" id="Pls-qc-guj"/>
+                        <outlet property="retweetLabel" destination="Mz3-qq-T2b" id="CUL-yJ-fCy"/>
+                        <outlet property="screenNameLabel" destination="Vg9-x2-oew" id="KfJ-oA-kMs"/>
+                        <outlet property="timeLabel" destination="D6f-JE-vis" id="Bgk-E8-5wX"/>
+                        <outlet property="userImage" destination="Qxg-e2-Buk" id="2NI-7e-Pps"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yed-1p-uki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

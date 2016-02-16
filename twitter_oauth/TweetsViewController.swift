@@ -62,6 +62,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             let row = tableView.indexPathForCell(cell)!.row
             if segue.identifier == "details" {
                 let vc = segue.destinationViewController as! DetailViewController
+                vc.tweet = tweets![row]
             }
         }
         
