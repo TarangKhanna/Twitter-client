@@ -57,6 +57,22 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let cell = sender as? UITableViewCell {
+            let row = tableView.indexPathForCell(cell)!.row
+            if segue.identifier == "details" {
+                let vc = segue.destinationViewController as! DetailViewController
+            }
+        }
+        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+        self.performSegueWithIdentifier("details", sender: currentCell)
+    }
+    
     func loadMoreData() {
         let parameters = NSMutableDictionary()
         numPages += 20
