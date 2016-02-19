@@ -38,6 +38,7 @@ class DetailViewController: UIViewController {
         self.nameLabel.text = (tweet?.user!.name)!
         self.screenNameLabel.text = "@\(tweet.user!.screenname!)"
         self.messageLabel.text = tweet?.text
+        
         self.timeLabel.text = String((tweet?.createdAt)!)
         
         if tweet.retweeted! {

@@ -38,9 +38,6 @@ class TwitterClient: BDBOAuth1SessionManager {
             success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
                 //                        print("home_timeline: \(response!)")
                 let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
-                for tweet in tweets {
-                    //                    print("text: \(tweet.text!), created: \(tweet.createdAt!)")
-                }
                 completion(tweets: tweets, error: nil)
             },
             failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
