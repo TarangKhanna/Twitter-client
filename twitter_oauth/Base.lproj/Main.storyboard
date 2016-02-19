@@ -447,6 +447,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hah-CQ-EqY">
+                                <rect key="frame" x="355" y="70" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -454,10 +460,12 @@
                             <constraint firstItem="JWH-p3-6Tm" firstAttribute="top" secondItem="ZWO-a6-ORB" secondAttribute="bottom" constant="8" id="5mz-c0-1ai"/>
                             <constraint firstItem="LB6-FZ-JbS" firstAttribute="top" secondItem="GxE-Nh-5ys" secondAttribute="bottom" constant="8" id="8CL-zs-GWF"/>
                             <constraint firstAttribute="trailing" secondItem="LB6-FZ-JbS" secondAttribute="trailing" constant="9" id="ERF-p6-lQb"/>
+                            <constraint firstAttribute="trailing" secondItem="hah-CQ-EqY" secondAttribute="trailing" constant="9" id="FaC-gM-ane"/>
                             <constraint firstItem="JWH-p3-6Tm" firstAttribute="leading" secondItem="GxE-Nh-5ys" secondAttribute="trailing" constant="8" id="Imk-dN-awk"/>
                             <constraint firstItem="GxE-Nh-5ys" firstAttribute="top" secondItem="ZWO-a6-ORB" secondAttribute="bottom" constant="8" id="SZv-PE-ust"/>
                             <constraint firstItem="lev-7T-X2I" firstAttribute="top" secondItem="JWH-p3-6Tm" secondAttribute="bottom" constant="6" id="XL5-Id-ONI"/>
                             <constraint firstItem="LB6-FZ-JbS" firstAttribute="leading" secondItem="sWX-qX-rdp" secondAttribute="leading" constant="9" id="ama-83-pWi"/>
+                            <constraint firstItem="hah-CQ-EqY" firstAttribute="top" secondItem="ZWO-a6-ORB" secondAttribute="bottom" constant="6" id="tkG-pB-6jr"/>
                             <constraint firstItem="lev-7T-X2I" firstAttribute="leading" secondItem="GxE-Nh-5ys" secondAttribute="trailing" constant="8" id="wht-TF-oFl"/>
                             <constraint firstItem="LB6-FZ-JbS" firstAttribute="top" secondItem="lev-7T-X2I" secondAttribute="bottom" constant="8" id="zAn-C5-jsg"/>
                             <constraint firstItem="aUT-HM-IXr" firstAttribute="top" secondItem="LB6-FZ-JbS" secondAttribute="bottom" constant="8" id="zEN-dV-ApG"/>
@@ -477,6 +485,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="countLabel" destination="hah-CQ-EqY" id="jxU-M2-mwt"/>
                         <outlet property="nameLabel" destination="JWH-p3-6Tm" id="OYn-D9-VQI"/>
                         <outlet property="profileImage" destination="GxE-Nh-5ys" id="fPs-M8-0Lw"/>
                         <outlet property="screenLabel" destination="lev-7T-X2I" id="rnF-6g-qnJ"/>

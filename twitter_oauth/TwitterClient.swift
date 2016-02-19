@@ -47,6 +47,8 @@ class TwitterClient: BDBOAuth1SessionManager {
         })
     }
     
+    
+    
     func favoriteTweetWithCompletion(tweetID: String, completion: (error: NSError?) -> ()) {
         
         if _currentUser != nil {
@@ -67,11 +69,28 @@ class TwitterClient: BDBOAuth1SessionManager {
         }
     }
     
+    func postTweetWithCompletion(status: String, completion: (error: NSError?) -> ()) {
+        let parameters = NSMutableDictionary()
+        parameters["status"] = status
+        
+        TwitterClient.sharedInstance.POST("1.1/statuses/update.json", parameters: parameters, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            print("posting status")
+            completion(error: nil)
+            },
+            failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
+                print("error posting status")
+                print(error)
+                completion(error: nil)
+        })
+
+    }
+
+    
     func unFavoriteTweetWithCompletion(ID: String, completion: (response: NSDictionary?, error: NSError?) -> ()) {
         let parameters = NSMutableDictionary()
         parameters["id"] = ID
         
-        POST("1.1/favorites/destroy.json", parameters: parameters, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+        TwitterClient.sharedInstance.POST("1.1/favorites/destroy.json", parameters: parameters, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
             print("unFavorited")
             completion(response: response as? NSDictionary, error: nil)
             },
@@ -96,6 +115,18 @@ class TwitterClient: BDBOAuth1SessionManager {
                     completion(error: error)
                     // does not return anything else since it is a POST
             })
+        }
+    }
+    
+    func replyToTweet(content:String, id:String, completion:(success:Bool)->Void){
+        let parameter = ["status":content,"in_reply_to_status_id":id]
+        print(id)
+        TwitterClient.sharedInstance.POST("1.1/statuses/update.json", parameters: parameter, success: { (task:NSURLSessionDataTask, response:AnyObject?) -> Void in
+            print("replies succeed")
+            completion(success: true)
+            }) { (task:NSURLSessionDataTask?, error:NSError) -> Void in
+                print("replies failed\(error)")
+                completion(success: false)
         }
     }
     

@@ -175,7 +175,7 @@ class TweetCell: UITableViewCell {
         // unfavorite - POST favorites/destroy
         
         if tweet!.favorited! {
-            TwitterClient.sharedInstance.sendUnRetweetWithCompletion((tweet?.tweetID)!, completion: { (response, error) -> () in
+            TwitterClient.sharedInstance.unFavoriteTweetWithCompletion((tweet?.tweetID)!, completion: { (response, error) -> () in
                 self.likeButton.setImage(UIImage(named: "like-action"), forState: .Normal)
                 self.tweet?.favoriteCount! -= 1
                 self.tweet!.favorited = false
