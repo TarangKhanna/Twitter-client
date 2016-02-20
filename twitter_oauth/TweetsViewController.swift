@@ -66,6 +66,11 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
         
+        if (segue.identifier! == "profile") {
+            let profileVC = segue.destinationViewController as! ProfileViewController
+            profileVC.user = sender as! User
+        }
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -152,8 +157,18 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    func profileImageTapped(gesture: UITapGestureRecognizer) {
+        let profileView = gesture.view as! UIImageView
+        print(self.tweets![profileView.tag].user!.name)
+        self.performSegueWithIdentifier("profile", sender: self.tweets![profileView.tag].user!)
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
+        let tapGesture = UITapGestureRecognizer(target: self, action:Selector("profileImageTapped:"))
+        cell.userImage.userInteractionEnabled = true
+        cell.userImage.addGestureRecognizer(tapGesture)
+        cell.userImage!.tag = indexPath.row
         cell.tweet = tweets![indexPath.row]
         return cell
     }

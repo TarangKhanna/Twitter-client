@@ -19,12 +19,21 @@ class User: NSObject {
     var profileImageUrl: String?
     var tagline: String?
     var dictionary: NSDictionary
+    var tweets: Int?
+    var followingCount: Int?
+    var followersCount: Int?
+    var profileBannerURL: String?
+    var backgroundImageURL: NSString?
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
         // pull user from persistance
-        
+        tweets = dictionary["statuses_count"] as? Int
+        followingCount = dictionary["friends_count"] as? Int
+        followersCount = dictionary["followers_count"] as? Int
+        profileBannerURL =  dictionary["profile_banner_url"] as? String
         name = dictionary["name"] as? String
+        backgroundImageURL = dictionary["profile_background_image_url"] as? String
         screenname = dictionary["screen_name"] as? String
         profileImageUrl = dictionary["profile_image_url"] as? String
         tagline = dictionary["description"] as? String
@@ -39,7 +48,7 @@ class User: NSObject {
     class var currentUser: User? {
         get {
             if _currentUser == nil {
-                var data = NSUserDefaults.standardUserDefaults().objectForKey(currentUserKey) as? NSData
+                let data = NSUserDefaults.standardUserDefaults().objectForKey(currentUserKey) as? NSData
                 if data != nil {
                     let dictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
                     _currentUser = User(dictionary: dictionary as! NSDictionary)

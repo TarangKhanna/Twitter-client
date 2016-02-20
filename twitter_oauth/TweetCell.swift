@@ -128,14 +128,24 @@ class TweetCell: UITableViewCell {
         }
         
     }
-
+    
     
     
     @IBAction func replyClicked(sender: AnyObject) {
         // post to tweet
-        
+//        self.performSegueWithIdentifier("reply", sender: self)
     }
     
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if let cell = sender as? UITableViewCell {
+//            let row = tableView.indexPathForCell(cell)!.row
+//            if segue.identifier == "details" {
+//                let vc = segue.destinationViewController as! DetailViewController
+//                vc.tweet = tweets![row]
+//            }
+//        }
+//        
+//    }
     
     @IBAction func retweetClicked(sender: AnyObject) {
         var id = tweet.tweetID
