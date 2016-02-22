@@ -24,6 +24,7 @@
 		71A718F41C6DB7200051F3D4 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A718F31C6DB7200051F3D4 /* TweetsViewController.swift */; };
 		71A718F61C6DC2E30051F3D4 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A718F51C6DC2E30051F3D4 /* TweetCell.swift */; };
 		71A718FB1C6E4EFF0051F3D4 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71A718FA1C6E4EFF0051F3D4 /* keys.plist */; };
+		71A79DBC1C7AA3E80062AA72 /* MyTweetsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A79DBB1C7AA3E80062AA72 /* MyTweetsCell.swift */; };
 		CC5A3964AC99F7638E0F5FE5 /* Pods_twitter_oauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A632648E52214F41D391D76D /* Pods_twitter_oauth.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		71A718F51C6DC2E30051F3D4 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		71A718F71C6DCDC00051F3D4 /* twitter_oauth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "twitter_oauth-Bridging-Header.h"; sourceTree = "<group>"; };
 		71A718FA1C6E4EFF0051F3D4 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		71A79DBB1C7AA3E80062AA72 /* MyTweetsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTweetsCell.swift; sourceTree = "<group>"; };
 		A632648E52214F41D391D76D /* Pods_twitter_oauth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twitter_oauth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,6 +203,7 @@
 			children = (
 				715F37601C6FC9E100D7D2A0 /* InfiniteScrollActivityView.swift */,
 				71A718F51C6DC2E30051F3D4 /* TweetCell.swift */,
+				71A79DBB1C7AA3E80062AA72 /* MyTweetsCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				717892F91C6981630033370D /* ViewController.swift in Sources */,
 				7178932B1C69A08A0033370D /* TwitterClient.swift in Sources */,
 				717892F71C6981630033370D /* AppDelegate.swift in Sources */,
+				71A79DBC1C7AA3E80062AA72 /* MyTweetsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

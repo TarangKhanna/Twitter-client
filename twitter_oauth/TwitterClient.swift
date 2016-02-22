@@ -47,6 +47,26 @@ class TwitterClient: BDBOAuth1SessionManager {
         })
     }
     
+    func userTimelineWithCompletion(sinceID: String = "", completion: (tweets: [Tweet], error: NSError?) -> ()) {
+        
+        var parameters = NSMutableDictionary()
+        parameters["screen_name"] = User.currentUser?.screenname
+        
+        TwitterClient.sharedInstance.GET("1.1/statuses/user_timeline.json",
+            parameters: parameters,
+            success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+                //                        print("home_timeline: \(response!)")
+                let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
+                completion(tweets: tweets, error: nil)
+            },
+            failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
+                print("error getting home timeline")
+                print(error)
+                completion(tweets: [Tweet](), error: error)
+        })
+
+
+    }
     
     
     func favoriteTweetWithCompletion(tweetID: String, completion: (error: NSError?) -> ()) {

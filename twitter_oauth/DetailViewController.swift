@@ -34,6 +34,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.userImage.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!)!)
         self.nameLabel.text = (tweet?.user!.name)!
         self.screenNameLabel.text = "@\(tweet.user!.screenname!)"

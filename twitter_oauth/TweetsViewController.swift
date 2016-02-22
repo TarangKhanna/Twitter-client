@@ -11,7 +11,7 @@ import DGElasticPullToRefresh
 import DGActivityIndicatorView
 import ElasticTransition
 
-class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +21,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     var loadingMoreView:InfiniteScrollActivityView?
     var isMoreDataLoading = false
     
+    func didTweetSuceed(sender: ComposeViewController) {
+        refresh()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

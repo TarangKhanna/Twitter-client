@@ -20,6 +20,8 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var countLabel: UILabel!
     
+    var delegate : ComposeViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         countLabel.hidden = true
@@ -46,7 +48,9 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
         if(!status.isEmpty) {
             TwitterClient.sharedInstance.postTweetWithCompletion(status!, completion: {(
                 error) -> () in
-                
+                if error == nil {
+                    self.delegate?.didTweetSuceed(self)
+                }
             })
             self.dismissViewControllerAnimated(true, completion: nil)
         } else {
@@ -76,4 +80,8 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
     }
     */
     
+}
+
+protocol ComposeViewControllerDelegate {
+    func didTweetSuceed(sender: ComposeViewController)
 }
